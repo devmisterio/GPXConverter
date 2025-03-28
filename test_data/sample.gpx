@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="GPXConverter Test" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Sample GPX File</name>
+    <desc>This is a sample GPX file for testing</desc>
+    <author>
+      <name>Test User</name>
+    </author>
+    <time>2025-03-28T10:00:00Z</time>
+    <keywords>test, sample, gpx</keywords>
+  </metadata>
+  
+  <!-- Waypoints -->
+  <wpt lat="37.7749" lon="-122.4194">
+    <ele>10</ele>
+    <time>2025-03-28T10:00:00Z</time>
+    <name>San Francisco</name>
+    <desc>City by the bay</desc>
+    <sym>City</sym>
+  </wpt>
+  
+  <wpt lat="34.0522" lon="-118.2437">
+    <ele>86</ele>
+    <time>2025-03-28T10:10:00Z</time>
+    <name>Los Angeles</name>
+    <desc>The city of angels</desc>
+    <sym>City</sym>
+  </wpt>
+  
+  <!-- Route -->
+  <rte>
+    <name>California Route</name>
+    <desc>A route through California</desc>
+    
+    <rtept lat="37.7749" lon="-122.4194">
+      <ele>10</ele>
+      <time>2025-03-28T10:00:00Z</time>
+      <name>San Francisco</name>
+    </rtept>
+    
+    <rtept lat="37.3382" lon="-121.8863">
+      <ele>26</ele>
+      <time>2025-03-28T10:30:00Z</time>
+      <name>San Jose</name>
+    </rtept>
+    
+    <rtept lat="36.7783" lon="-119.4179">
+      <ele>94</ele>
+      <time>2025-03-28T12:00:00Z</time>
+      <name>Fresno</name>
+    </rtept>
+    
+    <rtept lat="34.0522" lon="-118.2437">
+      <ele>86</ele>
+      <time>2025-03-28T15:00:00Z</time>
+      <name>Los Angeles</name>
+    </rtept>
+  </rte>
+  
+  <!-- Track -->
+  <trk>
+    <name>Morning Hike</name>
+    <desc>A hike in the mountains</desc>
+    
+    <trkseg>
+      <trkpt lat="37.8651" lon="-119.5383">
+        <ele>2600</ele>
+        <time>2025-03-28T08:00:00Z</time>
+      </trkpt>
+      
+      <trkpt lat="37.8671" lon="-119.5363">
+        <ele>2650</ele>
+        <time>2025-03-28T08:15:00Z</time>
+      </trkpt>
+      
+      <trkpt lat="37.8691" lon="-119.5343">
+        <ele>2700</ele>
+        <time>2025-03-28T08:30:00Z</time>
+      </trkpt>
+      
+      <trkpt lat="37.8711" lon="-119.5323">
+        <ele>2750</ele>
+        <time>2025-03-28T08:45:00Z</time>
+      </trkpt>
+    </trkseg>
+    
+    <trkseg>
+      <trkpt lat="37.8711" lon="-119.5323">
+        <ele>2750</ele>
+        <time>2025-03-28T09:00:00Z</time>
+      </trkpt>
+      
+      <trkpt lat="37.8731" lon="-119.5303">
+        <ele>2800</ele>
+        <time>2025-03-28T09:15:00Z</time>
+      </trkpt>
+      
+      <trkpt lat="37.8751" lon="-119.5283">
+        <ele>2850</ele>
+        <time>2025-03-28T09:30:00Z</time>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

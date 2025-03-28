@@ -52,3 +52,6 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 /converter-docs
+test_data/sample.geojson
+test_data/sample.csv
+test_data/sample.kml
