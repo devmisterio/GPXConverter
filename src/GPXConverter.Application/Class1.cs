@@ -20,6 +20,10 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IGpxReader, Infrastructure.Repositories.GpxReader>();
         services.AddTransient<IGpxWriter, Infrastructure.Repositories.GpxWriter>();
         
+        // Register GPS analysis and filtering services
+        services.AddTransient<IGpsAnalyzer, Infrastructure.Services.GpsAnalyzer>();
+        services.AddTransient<IGpsDataFilter, Infrastructure.Services.GpsDataFilter>();
+        
         // Register format converters
         services.AddTransient<Infrastructure.Services.GpxToCsvConverter>();
         services.AddTransient<Infrastructure.Services.GpxToGeoJsonConverter>();
