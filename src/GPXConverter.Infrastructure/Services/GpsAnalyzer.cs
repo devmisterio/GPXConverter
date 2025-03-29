@@ -300,7 +300,7 @@ public class GpsAnalyzer : IGpsAnalyzer
             if (timeDiff.TotalSeconds <= 0)
                 continue; // Skip invalid time intervals
                 
-            var distance = CalculateHaversineDistance(p1.Latitude, p1.Longitude, p2.Latitude, p2.Longitude);
+            var distance = CalculateGeodesicDistance(p1.Latitude, p1.Longitude, p2.Latitude, p2.Longitude);
             var speed = distance / timeDiff.TotalSeconds; // m/s
             
             if (speed >= speedThreshold)
@@ -422,7 +422,7 @@ public class GpsAnalyzer : IGpsAnalyzer
         
         for (int i = 0; i < points.Count; i++)
         {
-            int start = Math.Max(0, i - windowSize / 2);
+            int start = Math.Max(0, i - (int)(windowSize / 2));
             int end = Math.Min(points.Count - 1, i + windowSize / 2);
             int count = end - start + 1;
             
@@ -450,7 +450,7 @@ public class GpsAnalyzer : IGpsAnalyzer
             if (!p1.Time.HasValue || !p2.Time.HasValue)
                 continue;
                 
-            var distance = CalculateHaversineDistance(p1.Latitude, p1.Longitude, p2.Latitude, p2.Longitude);
+            var distance = CalculateGeodesicDistance(p1.Latitude, p1.Longitude, p2.Latitude, p2.Longitude);
             var timeDiff = (p2.Time.Value - p1.Time.Value).TotalSeconds;
             
             if (timeDiff <= 0)
@@ -531,7 +531,8 @@ public class GpsAnalyzer : IGpsAnalyzer
         
         // Create a LineString from all points for 3D interpolation
         var coordinates = allPoints.Select(p => 
-            new Coordinate(p.Longitude, p.Latitude, p.Elevation ?? 0)).ToArray();
+            new CoordinateZ(p.Longitude, p.Latitude, p.Elevation ?? 0)
+        ).ToArray();
         var lineString = new LineString(coordinates) { SRID = WGS84_SRID };
         
         // Always include the start and end points
