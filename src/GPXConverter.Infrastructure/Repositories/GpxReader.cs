@@ -50,7 +50,7 @@ public class GpxReader(ILogger<GpxReader> logger) : IGpxReader
             }
             
             _logger.LogInformation(
-                "GPX file read successfully : {{WaypointCount}} waypoint, {{RouteCount}} route, {{TrackCount}} track",
+                "GPX file read successfully : {WaypointCount} waypoint, {RouteCount} route, {TrackCount} track",
                 document.Waypoints.Count, document.Routes.Count, document.Tracks.Count);
             
             return document;

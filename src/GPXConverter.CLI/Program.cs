@@ -380,12 +380,12 @@ public class Program
             {
                 var distanceKm = point.Distance / 1000.0;
                 var elevationLabel = $"{distanceKm:F1} km";
-                chart.AddItem(elevationLabel, point.Elevation - minValue, Color.Blue);
+                chart.AddItem(elevationLabel, Math.Round(point.Elevation - minValue), Color.White);
             }
             
             AnsiConsole.Write(chart);
             
-            AnsiConsole.MarkupLine($"Elevation range: [blue]{minValue:F0}m[/] to [blue]{maxValue:F0}m[/]");
+            AnsiConsole.MarkupLine($"Elevation range: [blue]{Math.Round(minValue)}m[/] to [blue]{Math.Round(maxValue)}m[/]");
         }
     }
     
