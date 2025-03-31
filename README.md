@@ -2,6 +2,8 @@
 
 GPX Converter is a multi-platform application for converting and analyzing GPX files. The application can be used in three different ways: CLI, Web API, and Web Interface.
 
+<img src="docs/images/mockup-view.png" alt="Web Interface Mockup" width="800" height="400"/>
+
 ## Overview
 
 GPX Converter is a powerful application for working with GPS data, offering multiple interfaces:
@@ -164,3 +166,4 @@ Contributions are welcome! Please feel free to submit pull requests.
 ## License
 
 This project is licensed under the MIT License.
+
