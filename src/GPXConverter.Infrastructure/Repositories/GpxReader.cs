@@ -141,12 +141,18 @@ public class GpxReader(ILogger<GpxReader> logger) : IGpxReader
         
         string? latStr = reader.GetAttribute("lat");
         string? lonStr = reader.GetAttribute("lon");
+        
+        // Fix for decimal separator issues (replace comma with dot)
+        latStr = latStr?.Replace(',', '.');
+        lonStr = lonStr?.Replace(',', '.');
 
         if (double.TryParse(latStr, NumberStyles.Any, CultureInfo.InvariantCulture, out double lat))
             waypoint.Latitude = lat;
         
         if (double.TryParse(lonStr, NumberStyles.Any, CultureInfo.InvariantCulture, out double lon))
             waypoint.Longitude = lon;
+            
+        _logger.LogDebug("Parsed GPX point: lat={Lat}, lon={Lon}", waypoint.Latitude, waypoint.Longitude);
 
         if (reader.IsEmptyElement)
             return waypoint;
